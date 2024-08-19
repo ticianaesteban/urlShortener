@@ -7,7 +7,7 @@ class URL(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     original_url = db.Column(db.String(512), nullable=False)
     short_url = db.Column(db.String(10), unique=True, nullable=False)
-    active = db.Column(db.Boolean, default=True)
+    enabled = db.Column(db.Boolean, default=True)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -21,7 +21,3 @@ class URL(db.Model):
         short_url = ''.join(random.choice(characters) for _ in range(6))
 
         return short_url
-
-    def assign_new_url(self, url):
-        self.original_url = url
-        return self

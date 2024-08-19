@@ -12,7 +12,5 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
-        import routes
-        import models  # Importar rutas y modelos aquí
-        db.create_all()  # Crea las tablas en la base de datos
+        db.create_all()
     return app
