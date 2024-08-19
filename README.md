@@ -14,7 +14,7 @@ The app provides endpoints to enable/disable the url redirection and to change t
 - SQLAlchemy
 - PostgreSQL
 
-## Instalation
+## Installation
 
 1. Clone the repository:
 ``` bash 
