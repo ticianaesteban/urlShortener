@@ -50,7 +50,7 @@ def disable_url(short_url):
     Get the short URL from the request and disable the destination URL. Update the flag in the database.
     """
     url = URL.query.filter_by(short_url=short_url).first_or_404()
-    url.enbaled = False
+    url.enabled = False
     db.session.commit()
     return jsonify({'short_url': url.short_url, 'destination_url': url.destination_url})
 
